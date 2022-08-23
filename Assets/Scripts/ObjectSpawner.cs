@@ -13,7 +13,7 @@ public class ObjectSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeUntilNextSpawn = SpawnTimer;
+        timeUntilNextSpawn = 0;
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class ObjectSpawner : MonoBehaviour
         timeUntilNextSpawn -= Time.deltaTime;
         if (timeUntilNextSpawn <= 0)
         {
-            GameObject objectToSpawn = SpawnableObjects[Random.Range(0, SpawnableObjects.Length - 1)];
+            GameObject objectToSpawn = SpawnableObjects[Random.Range(0, SpawnableObjects.Length)];
             Instantiate(objectToSpawn, transform.position, Quaternion.identity);
             timeUntilNextSpawn = SpawnTimer;
         }

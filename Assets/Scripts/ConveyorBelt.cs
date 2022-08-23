@@ -14,26 +14,8 @@ public class ConveyorBelt : MonoBehaviour
         onBelt = new List<GameObject>();
     }
 
-    private void Update()
-    {
-        // for (int i = 0; i < onBelt.Count - 1; i++)
-        // {
-        //     onBelt[i].GetComponent<Rigidbody>().AddForce(Direction * Time.deltaTime * ConveyorSpeed, ForceMode.Acceleration);
-        // }
-    }
-
     private void OnTriggerStay(Collider other)
     {
         other.GetComponent<Rigidbody>().AddForce(Direction * Time.deltaTime * ConveyorSpeed, ForceMode.Acceleration);
     }
-
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     onBelt.Add(other.gameObject);
-    // }
-    //
-    // private void OnTriggerExit(Collider other)
-    // {
-    //     onBelt.Remove(other.gameObject);
-    // }
 }
