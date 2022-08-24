@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1208251e416e9b48a26240c5c213eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Grabbed: 0
 --- !u!114 &7037030670528204680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TypeOfObject: 1
+  ParticleBreakGO: {fileID: 5680969442854845552, guid: 4a8bd4f9abe68374aba48a82bfbb5f4c, type: 3}
 --- !u!54 &7037030670528204681
 Rigidbody:
   m_ObjectHideFlags: 0

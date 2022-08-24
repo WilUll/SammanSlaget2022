@@ -16,6 +16,9 @@ public class ConveyorBelt : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        other.GetComponent<Rigidbody>().AddForce(Direction * Time.deltaTime * ConveyorSpeed, ForceMode.Acceleration);
+        if (!other.GetComponent<Throwable>().Grabbed)
+        {
+            other.GetComponent<Rigidbody>().AddForce(Direction * Time.deltaTime * ConveyorSpeed, ForceMode.Acceleration);
+        }
     }
 }
