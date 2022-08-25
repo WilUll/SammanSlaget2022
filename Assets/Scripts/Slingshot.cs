@@ -33,6 +33,7 @@ public class Slingshot : MonoBehaviour
         {
             endMousePos = Input.mousePosition;
             grabbedObject.GetComponent<Throwable>().DrawLine();
+            grabbedObject.GetComponent<Trajectory>().DrawLine(endMousePos);
         }
 
         if (Input.GetMouseButtonUp(0)&& grabbedObject != null)

@@ -30,13 +30,13 @@ public class Bin : MonoBehaviour
             if (movingObject.TypeOfObject == binType)
             {
                 correctParticleSystem.GetComponent<ParticleSystem>().Play();
-                GameManager.Correct++;
+                GameManager.AddScore(10);
             }
 
             if (movingObject.TypeOfObject!= binType)
             {
                 wrongParticleSystem.GetComponent<ParticleSystem>().Play();
-                GameManager.Misses++;
+                GameManager.AddScore(-5);
             }
 
             if (ObjectsInBin >= binSize)
@@ -45,8 +45,8 @@ public class Bin : MonoBehaviour
             }
             
             Destroy(collision.gameObject);
+            Camera.main.GetComponent<CameraShake>().AddShake(0.1f, 0.1f);
             UIHandler.myUpdateUI();
-
         }
     }
 

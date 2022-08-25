@@ -17,9 +17,10 @@ public class CameraShake : MonoBehaviour
 	
     Vector3 originalPos;
 
-    public void AddShake()
+    public void AddShake(float duration, float shake)
     {
-        shakeDuration = 0.1f;
+        shakeAmount = shake;
+        shakeDuration = duration;
     }
     
     void Awake()

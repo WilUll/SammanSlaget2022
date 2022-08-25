@@ -13,11 +13,13 @@ public class MovingObject : MonoBehaviour
     {
         if (collision.collider.CompareTag("BreakObject"))
         {
-            GameObject particleSystemGameObject = Instantiate(ParticleBreakGO, transform.position, Quaternion.identity);
+            GameObject particleSystemGameObject = Instantiate(ParticleBreakGO, transform.position, Quaternion.Euler(-90,0,0));
             particleSystemGameObject.GetComponent<ParticleSystemRenderer>().material =
                 GetComponent<MeshRenderer>().material;
             particleSystemGameObject.GetComponent<ParticleSystem>().Play();
-            Camera.main.GetComponent<CameraShake>().AddShake();
+            Camera.main.GetComponent<CameraShake>().AddShake(0.1f, 0.5f);
+            GameManager.AddScore(-5);
+            UIHandler.myUpdateUI();
             Destroy(gameObject);
             Destroy(particleSystemGameObject, 5);
         }
