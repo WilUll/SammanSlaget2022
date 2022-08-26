@@ -15,14 +15,13 @@ public class Trajectory : MonoBehaviour
 
     public void DrawLine(Vector3 mousePos)
     {
-        worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5f));
+        worldPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 5f));
 
-        Debug.Log(worldPos);
         lineRenderer.enabled = true;
         Vector3[] linePos = new Vector3[]
         {
             transform.position,
-            new Vector3(-worldPos.x, transform.position.y, (worldPos.z - transform.position.z))
+            new Vector3(transform.position.x - (transform.position.x + worldPos.x), transform.position.y, transform.position.z + (transform.position.z - worldPos.z))
         };
         lineRenderer.SetPositions(linePos);
     }

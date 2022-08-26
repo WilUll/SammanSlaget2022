@@ -21,6 +21,6 @@ public class Throwable : MonoBehaviour
 
     public void Throw(Vector3 force) {
         rb.isKinematic = false;
-        rb.AddForce(new Vector3(force.y, force.y * 2, -force.x));
+        rb.AddForce(new Vector3(force.y, 1, -force.x));
     }
 }

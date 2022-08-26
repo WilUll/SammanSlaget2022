@@ -22,7 +22,6 @@ public class UIHandler : MonoBehaviour
         earthMaterial = Earth.GetComponent<MeshRenderer>().sharedMaterial;
         materialColor = new Color(0.5f - (GameManager.MoneyCollected/200), 0.5f - (GameManager.MoneyCollected/200), 0.5f - (GameManager.MoneyCollected/200),1f );
 
-        SetColors();
 
 
         myUpdateUI += UpdateText;
@@ -52,12 +51,12 @@ public class UIHandler : MonoBehaviour
 
     public void UpdateText()
     {
-        MoneyText.text = $"Insamlade pengar: {GameManager.MoneyCollected}";
+        MoneyText.text = $"Insamlade pengar: {GameManager.MoneyCollected} kr";
 
         materialColor = new Color(0.5f + (GameManager.MoneyCollected/200f), 0.5f + (GameManager.MoneyCollected/200f), 0.5f + (GameManager.MoneyCollected/200f),1f );
         SetColors();
         
-        if (GameManager.MoneyCollected is <= -100 or >= 100)
+        if (GameManager.MoneyCollected <= -100 || GameManager.MoneyCollected >= 100)
         {
             if (GetComponent<LoadNextScene>())
             {

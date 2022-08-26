@@ -8,6 +8,9 @@ public class MovingObject : MonoBehaviour
 {
     public ObjectType TypeOfObject;
     public GameObject ParticleBreakGO;
+    public AudioClip destructionClip;
+
+    public bool HasCollided;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -20,7 +23,11 @@ public class MovingObject : MonoBehaviour
             Camera.main.GetComponent<CameraShake>().AddShake(0.1f, 0.5f);
             GameManager.AddScore(-5);
             UIHandler.myUpdateUI();
+            
+            AudioSource.PlayClipAtPoint(destructionClip, transform.position);
+            
             Destroy(gameObject);
+            
             Destroy(particleSystemGameObject, 5);
         }
     }

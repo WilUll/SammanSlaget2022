@@ -11,18 +11,20 @@ public class StartMenu : MonoBehaviour
 
     public TextMeshProUGUI GameButton;
 
+    private string textAfter = "Sortera, samla in 100 kr och rädda världen!";
+
     private void Start()
     {
-        GameButton.color = new Color(DisplayText.color.r, DisplayText.color.g, DisplayText.color.b, 0);
+        GameButton.color = new Color(GameButton.color.r, GameButton.color.g, GameButton.color.b, 0);
         StartCoroutine(FadeInText(DisplayText, 2f, true));
     }
 
     IEnumerator FadeInText(TextMeshProUGUI textToFade, float time, bool fadeOut)
     {
-        textToFade.color = new Color(DisplayText.color.r, DisplayText.color.g, DisplayText.color.b, 0);
-        while (DisplayText.color.a < 1.0f)
+        textToFade.color = new Color(textToFade.color.r, textToFade.color.g, textToFade.color.b, 0);
+        while (textToFade.color.a < 1.0f)
         {
-            textToFade.color = new Color(DisplayText.color.r, DisplayText.color.g, DisplayText.color.b, DisplayText.color.a + (Time.deltaTime / time));
+            textToFade.color = new Color(textToFade.color.r, textToFade.color.g, textToFade.color.b, textToFade.color.a + (Time.deltaTime / time));
             yield return null;
         }
 
@@ -36,13 +38,15 @@ public class StartMenu : MonoBehaviour
 
     IEnumerator FadeOutText(TextMeshProUGUI textToFade, float time)
     {
-        textToFade.color = new Color(DisplayText.color.r, DisplayText.color.g, DisplayText.color.b, 1);
-        while (DisplayText.color.a > 0.0f)
+        textToFade.color = new Color(textToFade.color.r, textToFade.color.g, textToFade.color.b, 1);
+        while (textToFade.color.a > 0.0f)
         {
-            textToFade.color = new Color(DisplayText.color.r, DisplayText.color.g, DisplayText.color.b, DisplayText.color.a - (Time.deltaTime / time));
+            textToFade.color = new Color(textToFade.color.r, textToFade.color.g, textToFade.color.b, textToFade.color.a - (Time.deltaTime / time));
             yield return null;
         }
 
-        StartCoroutine(FadeInText(GameButton, 1, false));
+        textToFade.text = textAfter;
+        StartCoroutine(FadeInText(textToFade, 1, false));
+        StartCoroutine(FadeInText(GameButton, 3f, false));
     }
 }

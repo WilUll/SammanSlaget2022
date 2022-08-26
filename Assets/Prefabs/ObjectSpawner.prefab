@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6219355779245836681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6219355779245836683}
+  - component: {fileID: 6219355779245836682}
+  m_Layer: 0
+  m_Name: ObjectSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6219355779245836683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6219355779245836681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0464396, y: 2.16, z: -1.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6219355779245836682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6219355779245836681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d48dba6ab362345af81c8ad0ef8e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnableObjects:
+  - {fileID: 5076359741235589942, guid: eb7a4f9417682264d8c3b7e1e713484e, type: 3}
+  - {fileID: 7966083983735439462, guid: 6aa73f1191194744fb2bcc1763a49273, type: 3}
+  - {fileID: 5911691767843050807, guid: 9e8f3185d287b614784d3201d8d11370, type: 3}
+  - {fileID: 7621550114492339649, guid: 7013f9ea4eb8cbe44bfee46dc4e008db, type: 3}
+  - {fileID: 8773716150924378696, guid: 658a29a8ed863cb47a9aabd8318f4cf4, type: 3}
+  - {fileID: 1049934670096963629, guid: 6366634943ed0c44d80b5f5d6965ef93, type: 3}
+  - {fileID: 7281394706941839738, guid: fac39e2479be32e4a9a843851ae5eb0b, type: 3}
+  - {fileID: 2605805696992467208, guid: 551156ff722454f45a36799144262e62, type: 3}
+  - {fileID: 4281932279162862803, guid: fcea346f6d2ef7b4ea49a09172e2bd84, type: 3}
+  - {fileID: 6722894740718852761, guid: 54f97c200109ec448b502b6046a1114b, type: 3}
+  - {fileID: 4683171805614494911, guid: 1dbc822e2c0c2b348a31716019f335f5, type: 3}
+  - {fileID: 1936179525405996990, guid: 6ecefe1d55f5931429d95bd15ba8da9a, type: 3}
+  - {fileID: 3923209527020120681, guid: 3e728f1bf16c9214d8e1e31f6a155c9a, type: 3}
+  - {fileID: 5565900141332569082, guid: 581ec87fe6a418d4e8d59d1644ea3684, type: 3}
+  - {fileID: 4717614919246398467, guid: c0cd594610ee825428c6602ba98981c0, type: 3}
+  - {fileID: 617715267062683602, guid: 54541309ea633004c842e2c5caa156a9, type: 3}
+  - {fileID: 6910896602553804212, guid: 0776505743fc383429f3d4740f8ccbf8, type: 3}
+  - {fileID: 1990319316730552334, guid: c63e30f45e1bb734695c29204719564d, type: 3}
+  SpawnTimer: 7.5

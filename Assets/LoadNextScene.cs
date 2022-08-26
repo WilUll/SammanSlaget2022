@@ -7,6 +7,7 @@ public class LoadNextScene : MonoBehaviour
 {
     public void GameScene()
     {
+        GameManager.MoneyCollected = 0;
         SceneManager.LoadScene("GameScene");
     }
 
